@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@500;600;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#fff8fb;cursor:var(--cursor-soft);}
+button,a,.tag,.nav-link,.card-hover,.hamburger,.mobile-menu-item,[role="button"],input[type="checkbox"],input[type="radio"],summary{cursor:var(--cursor-soft-pointer);} input,textarea,select,label{cursor:var(--cursor-soft);}
+
+/* Floating decorations */
+@keyframes floatUp{0%{opacity:0;transform:translateY(0) scale(0.5) rotate(0deg);}20%{opacity:1;}80%{opacity:0.7;}100%{opacity:0;transform:translateY(-120px) scale(1.1) rotate(20deg);}}
+.float-deco{position:fixed;pointer-events:none;animation:floatUp 6s ease-in-out infinite;font-size:18px;z-index:1;}
+
+/* Buttons */
+.btn-primary{background:linear-gradient(135deg,#f472b6,#ec4899);color:#fff;border:none;padding:13px 30px;border-radius:50px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;letter-spacing:0.5px;cursor:pointer;transition:all 0.2s;box-shadow:0 6px 20px rgba(236,72,153,0.35);}
+.btn-primary:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 10px 28px rgba(236,72,153,0.45);}
+.btn-outline{background:transparent;color:#ec4899;border:2.5px solid #f4a0c8;padding:11px 26px;border-radius:50px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;cursor:pointer;transition:all 0.2s;}
+.btn-outline:hover{background:#fff0f8;transform:translateY(-1px);}
+.btn-danger{background:linear-gradient(135deg,#f87171,#ef4444);color:#fff;border:none;padding:9px 18px;border-radius:50px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;cursor:pointer;transition:all 0.2s;box-shadow:0 4px 12px rgba(239,68,68,0.3);}
+.btn-danger:hover{transform:translateY(-1px);}
+.btn-edit{background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#fff;border:none;padding:9px 18px;border-radius:50px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;cursor:pointer;transition:all 0.2s;box-shadow:0 4px 12px rgba(245,158,11,0.3);}
+.btn-edit:hover{transform:translateY(-1px);}
+
+/* Input */
+.input-field{width:100%;padding:12px 18px;border:2.5px solid #fad4e8;border-radius:16px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;color:#4a1040;background:#fff;outline:none;transition:all 0.2s;}
+.input-field:focus{border-color:#ec4899;box-shadow:0 0 0 4px rgba(236,72,153,0.12);}
+textarea.input-field{resize:vertical;min-height:80px;}
+.search-shell{position:relative;max-width:440px;}
+.search-icon-bubble{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:999px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#fff0f8,#fffde7);border:2px solid #fad4e8;box-shadow:0 6px 18px rgba(212,86,138,0.12);pointer-events:none;}
+.search-input{padding-left:66px!important;padding-right:18px!important;min-height:54px;border-radius:999px!important;border-width:3px!important;background:linear-gradient(135deg,#ffffff,#fff8fb)!important;font-family:'Baloo 2','Nunito',sans-serif!important;font-size:18px!important;font-weight:600!important;letter-spacing:0.2px;color:#8a3d72;box-shadow:0 8px 22px rgba(212,86,138,0.08);}
+.search-input::placeholder{font-family:'Baloo 2','Nunito',sans-serif;color:#d179a4;opacity:1;font-size:17px;}
+
+/* Badges */
+.badge{display:inline-flex;align-items:center;padding:5px 14px;border-radius:50px;font-family:'Nunito',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.3px;}
+.badge-green{background:#dcfce7;color:#166534;}
+.badge-red{background:#fee2e2;color:#991b1b;}
+.badge-yellow{background:#fef9c3;color:#854d0e;}
+
+/* Tags */
+.tag{display:inline-block;background:#fce7f3;color:#be185d;padding:6px 16px;border-radius:50px;font-family:'Nunito',sans-serif;font-size:12px;font-weight:800;cursor:pointer;transition:all 0.2s;margin:3px;border:2px solid transparent;}
+.tag:hover,.tag.active{background:linear-gradient(135deg,#f472b6,#ec4899);color:#fff;transform:translateY(-1px);box-shadow:0 4px 12px rgba(236,72,153,0.3);}
+
+/* Toast */
+.toast{position:fixed;bottom:28px;right:20px;left:20px;max-width:380px;margin:0 auto;padding:16px 24px;border-radius:20px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;z-index:8999;animation:toastIn 0.35s ease;box-shadow:0 12px 40px rgba(0,0,0,0.18);text-align:center;}
+.toast-success{background:linear-gradient(135deg,#ec4899,#be185d);color:#fff;}
+.toast-error{background:linear-gradient(135deg,#ef4444,#b91c1c);color:#fff;}
+.toast-info{background:linear-gradient(135deg,#8b5cf6,#6d28d9);color:#fff;}
+@keyframes toastIn{from{opacity:0;transform:translateY(20px)scale(0.92);}to{opacity:1;transform:translateY(0)scale(1);}}
+
+/* Nav */
+.nav-link{font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#be185d;cursor:pointer;padding:8px 16px;border-radius:50px;transition:all 0.2s;}
+.nav-link:hover,.nav-link.active{background:linear-gradient(135deg,#f472b6,#ec4899);color:#fff;box-shadow:0 4px 14px rgba(236,72,153,0.35);}
+
+/* Product card */
+.card-hover{transition:transform 0.3s,box-shadow 0.3s;cursor:pointer;}
+.card-hover:hover{transform:translateY(-8px) rotate(0.5deg);box-shadow:0 24px 48px rgba(212,86,138,0.2);}
+.carousel-track::-webkit-scrollbar{display:none;}
+.carousel-track{scrollbar-width:none;-ms-overflow-style:none;}
+.carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:2px solid #fad4e8;background:rgba(255,255,255,0.95);color:#be185d;font-size:28px;font-weight:900;line-height:1;cursor:pointer;box-shadow:0 6px 18px rgba(90,20,70,0.16);display:flex;align-items:center;justify-content:center;z-index:3;}
+.carousel-arrow:hover{background:#fff0f8;transform:translateY(-50%) scale(1.06);}
+.carousel-arrow-left{left:12px;}
+.carousel-arrow-right{right:12px;}
+@media (hover:none) and (pointer:coarse){.carousel-arrow{display:none;}}
+
+
+/* Grid */
+.grid-products{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;}
+
+/* Overlay */
+.overlay{position:fixed;inset:0;background:rgba(80,20,60,0.6);z-index:1000;display:flex;align-items:center;justify-content:center;padding:16px;}
+.modal{background:linear-gradient(160deg,#fff8fb,#fffde7);border-radius:28px;width:100%;max-width:540px;max-height:92vh;overflow-y:auto;padding:clamp(20px,5vw,40px);box-shadow:0 30px 80px rgba(180,50,120,0.3);border:3px solid #fad4e8;}
+
+/* Hero polka dots pattern */
+.hero-bg{background-color:#fff8fb;background-image:radial-gradient(circle,#f9d4e8 1px,transparent 1px);background-size:28px 28px;}
+
+/* Bounce */
+.bounce{animation:bounceFun 1.8s ease-in-out infinite;}
+@keyframes bounceFun{0%,100%{transform:translateY(0);}40%{transform:translateY(-10px);}60%{transform:translateY(-5px);}}
+
+/* Mobile */
+.desktop-nav{display:flex;}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+.hamburger span{width:26px;height:3px;background:#ec4899;border-radius:3px;transition:all 0.3s;}
+.mobile-menu{display:none;}
+
+@media(max-width:640px){
+  .desktop-nav{display:none!important;}
+  .hamburger{display:flex;}
+  .mobile-menu{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff8fb;border-bottom:3px solid #fad4e8;box-shadow:0 12px 32px rgba(212,86,138,0.15);z-index:200;}
+  .mobile-menu-item{padding:18px 24px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;color:#be185d;cursor:pointer;border-bottom:2px solid #fde8f4;transition:background 0.2s;}
+  .mobile-menu-item:hover,.mobile-menu-item.active{background:#fce7f3;}
+  .grid-products{grid-template-columns:repeat(2,1fr);gap:12px;}
+  .admin-row{flex-direction:column!important;}
+  .admin-actions{align-self:flex-end;margin-top:8px;}
+}
+@media(max-width:380px){.grid-products{grid-template-columns:1fr;}}
+
+/* Wobbly card corners */
+.wobbly{border-radius:22px 28px 24px 26px / 26px 22px 28px 24px;}
+/* Sticker badge */
+.sticker{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#fde68a,#fbbf24);color:#78350f;font-family:'Nunito',sans-serif;font-size:11px;font-weight:900;padding:5px 12px;border-radius:50px;border:2.5px solid #f59e0b;transform:rotate(-2deg);box-shadow:2px 2px 0 rgba(0,0,0,0.08);}
+.sticker-pink{background:linear-gradient(135deg,#fce7f3,#fbcfe8);color:#9d174d;border-color:#f4a0c8;transform:rotate(1.5deg);}
+
+/* Soft pink custom cursors */
+:root{
+  --cursor-soft:url("/cursors/normal.cur"), auto;
+  --cursor-soft-pointer:url("/cursors/love-hand.cur"), pointer;
+}
+
+html,
+body,
+#root,
+input,
+textarea,
+select,
+label{
+  cursor:var(--cursor-soft)!important;
+}
+
+button,
+a,
+.tag,
+.nav-link,
+.card-hover,
+.hamburger,
+.mobile-menu-item,
+.carousel-arrow,
+[role="button"],
+input[type="checkbox"],
+input[type="radio"],
+summary{
+  cursor:var(--cursor-soft-pointer)!important;
+}
